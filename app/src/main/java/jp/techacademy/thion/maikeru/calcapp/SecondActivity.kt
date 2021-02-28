@@ -11,7 +11,8 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
-        val value1=intent.getIntExtra("VALUE1",0)
+        val value1=intent.getDoubleExtra("VALUE1",0.0)
+        Log.d("UI_PARTS","VALUE1=$value1")
         textView1.text= value1.toString()
     }
 

@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText1"
         android:layout_alignParentTop="true"
+        android:inputType="numberDecimal"
         />
 
     <EditText
@@ -19,6 +20,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText2"
         android:layout_below="@+id/editText1"
+        android:inputType="numberDecimal"
         />
 
 
