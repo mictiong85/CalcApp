@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var hasBeenClicked=0
         button1.setOnClickListener(this)
         button2.setOnClickListener(this)
         button3.setOnClickListener(this)
@@ -21,11 +20,17 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
     override fun onClick(v: View) {
         val intent=Intent(this, SecondActivity::class.java)
-        val a:Double=editText1.text.toString().toDouble()
+/*        val a:Double=editText1.text.toString().toDouble()
         val b:Double=editText2.text.toString().toDouble()
-        var c:Double=0.00
+        var c:Double=0.00*/
 
-        if(a!=null && b!=null){
+        val msg1:String=editText1.text.toString()
+        val msg2:String=editText2.text.toString()
+
+        if(msg1.trim().isNotEmpty() && msg2.trim().isNotEmpty()){
+            val a=editText1.text.toString().toDouble()
+            val b=editText2.text.toString().toDouble()
+            var c=0.00
             when(v.id){
                 R.id.button1 -> {
                     Log.d("Button", "1")
@@ -47,9 +52,11 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             }
             intent.putExtra("VALUE1", c)
             startActivity(intent)
-        } else{
-            val snackbar=Snackbar.make(v, "Pls Input Digit", Snackbar.LENGTH_LONG)
-            snackbar.show()
+        } else if (msg1.trim().isEmpty()|| msg2.trim().isEmpty() ){
+/*            val view=findViewById<View>(android.R.id.content)*/
+            Snackbar.make(v, "Pls Input Digit", Snackbar.LENGTH_LONG).show()
+            //val snackbar=Snackbar.make(v, "Pls Input Digit", Snackbar.LENGTH_LONG)
+            //snackbar.show()
         }
 
 
