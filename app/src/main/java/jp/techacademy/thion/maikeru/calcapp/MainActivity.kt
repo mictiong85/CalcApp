@@ -20,9 +20,6 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
     override fun onClick(v: View) {
         val intent=Intent(this, SecondActivity::class.java)
-/*        val a:Double=editText1.text.toString().toDouble()
-        val b:Double=editText2.text.toString().toDouble()
-        var c:Double=0.00*/
 
         val msg1:String=editText1.text.toString()
         val msg2:String=editText2.text.toString()
@@ -53,14 +50,8 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             intent.putExtra("VALUE1", c)
             startActivity(intent)
         } else if (msg1.trim().isEmpty()|| msg2.trim().isEmpty() ){
-/*            val view=findViewById<View>(android.R.id.content)*/
             Snackbar.make(v, "Pls Input Digit", Snackbar.LENGTH_LONG).show()
-            //val snackbar=Snackbar.make(v, "Pls Input Digit", Snackbar.LENGTH_LONG)
-            //snackbar.show()
         }
-
-
-
 
     }
 }
